@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu - Master's Pastil</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+/* GLOBAL FIX */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* BODY */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f8f8;
+    opacity: 0; /* for fade-in effect */
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* HEADER */
+header {
+    background: transparent;
+    color: white;
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* LOGO */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-container img {
+    width: 50px;
+    border-radius: 5px;
+}
+
+header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+/* NAVIGATION */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 14px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    border: 2px solid #ff9800;
+}
+
+/* TOP BANNER */
+.menu-banner {
+    height: 300px;
+    width: 100%;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url('https://lakbaycentral.com/wp-content/uploads/2023/10/What-is-Pastil-1024x683.jpg') no-repeat center center/cover;
+}
+
+/* MENU SECTION */
+.menu-section {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.menu-section h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+/* MENU CARDS */
+.menu-items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.menu-card {
+    background: white;
+    width: 260px;
+    padding: 20px;
+    border-radius: 12px;
+    border: 3px solid #ff9800;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.menu-card:hover {
+    transform: translateY(-5px);
+}
+
+.menu-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-weight: bold;
+    color: #ff9800;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+/* FOOTER */
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav {
+        margin-top: 10px;
+    }
+
+    .menu-items {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo-container">
+        <img src="logo.png" alt="Master's Pastil Logo">
+        <h2>Master's Pastil</h2>
+    </div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html" class="active">Menu</a>
+        <a href="about.html">About</a>
+    </nav>
+</header>
+
+<div class="menu-banner"></div>
+
+<section class="menu-section">
+    <h1>Our Menu</h1>
+
+    <div class="menu-items">
+
+        <div class="menu-card">
+            <img src="sample1.png" alt="Chicken Pastil">
+            <h3>Chicken Pastil</h3>
+            <p>Authentic shredded chicken over rice.</p>
+            <div class="price">₱59</div>
+        </div>
+
+        <div class="menu-card">
+            <img src="sample2.png" alt="Beef Pastil">
+            <h3>Beef Pastil</h3>
+            <p>Tender beef strips served with steamed rice.</p>
+            <div class="price">₱69</div>
+        </div>
+
+        <div class="menu-card">
+            <img src="sample3.png" alt="Special Combo">
+            <h3>Special Combo</h3>
+            <p>Pastil with egg and refreshing drink.</p>
+            <div class="price">₱89</div>
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Master's Pastil | All Rights Reserved</p>
+</footer>
+
+<!-- SMOOTH PAGE TRANSITION SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    // fade in page
+    document.body.style.opacity = 1;
+
+    // fade out on nav click
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            const href = link.getAttribute('href');
+            document.body.style.opacity = 0;
+            setTimeout(() => {
+                window.location.href = href;
+            }, 500);
+        });
+    });
+});
+</script>
+
+</body>
+</html>

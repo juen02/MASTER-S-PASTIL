@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Master's Pastil</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+/* GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* smooth scrolling for anchors */
+}
+
+/* BODY */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f8f8;
+    opacity: 0; /* initial for fade-in effect */
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* HEADER */
+header {
+    background: #111;
+    color: white;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid #ff9800;
+    position: sticky; /* <-- makes the nav stick */
+    top: 0;
+    z-index: 999;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-container img {
+    width: 50px;
+    height: auto;
+    border-radius: 5px;
+}
+
+header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 14px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    border: 2px solid #ff9800;
+}
+
+/* HERO SECTION */
+.hero {
+    position: relative;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    color: white;
+    background: url('logo1.png') no-repeat center center;
+    background-size: contain;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 1;
+}
+
+.hero h1,
+.hero p {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 50px;
+}
+
+.hero p {
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+/* FOOTER */
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo-container">
+        <img src="logo.png" alt="Master's Pastil Logo">
+        <h2>Master's Pastil</h2>
+    </div>
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html">About</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>Welcome to Master's Pastil</h1>
+    <p>“Pastil, a Maguindanaoan delicacy, is steamed rice wrapped in banana leaves—a beloved breakfast of Mindanao’s Muslim heritage.”</p>
+</section>
+
+<footer>
+    <p>© 2026 Master's Pastil | All Rights Reserved</p>
+</footer>
+
+<!-- SMOOTH PAGE TRANSITION SCRIPT -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    // fade in page
+    document.body.style.opacity = 1;
+
+    // smooth fade-out on link click
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', e => {
+            e.preventDefault();
+            const href = link.getAttribute('href');
+            document.body.style.opacity = 0;
+            setTimeout(() => {
+                window.location.href = href;
+            }, 500); // fade duration matches CSS transition
+        });
+    });
+});
+</script>
+
+</body>
+</html>

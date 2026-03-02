@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About - Master's Pastil</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- Font Awesome for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+/* GLOBAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f8f8;
+}
+
+/* HEADER */
+header {
+    background: #111;
+    color: white;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid #ff9800;
+    position: sticky; /* sticky nav */
+    top: 0;
+    z-index: 999;
+}
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo-container img {
+    width: 50px;
+    height: auto;
+    border-radius: 5px;
+}
+header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 14px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+nav a:hover,
+nav a.active {
+    border: 2px solid #ff9800;
+}
+
+/* ABOUT SECTION */
+.about-section {
+    padding: 80px 20px;
+    text-align: center;
+}
+.about-section h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+.about-section p {
+    font-size: 18px;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    line-height: 1.6;
+}
+
+/* OWNER CARD */
+.owner-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto 40px auto;
+}
+.owner-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+.owner-card h3 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+}
+.owner-card p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* SOCIAL BUTTON */
+.social-buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+}
+.social-buttons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    transition: 0.3s;
+}
+.social-buttons a.facebook {
+    background: #1877f2; /* Facebook Blue */
+}
+.social-buttons a:hover {
+    opacity: 0.85;
+}
+
+/* BRANCH MAPS */
+.branch-section {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+.branch {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    max-width: 500px;
+    flex: 1;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.branch h3 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 10px;
+}
+.branch iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+    border-radius: 8px;
+}
+
+/* FOOTER */
+footer {
+    background: #111;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* RESPONSIVE */
+@media(max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav {
+        margin-top: 10px;
+    }
+    .branch-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    .owner-card img {
+        width: 100px;
+        height: 100px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo-container">
+        <img src="logo.png" alt="Master's Pastil Logo">
+        <h2>Master's Pastil</h2>
+    </div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="about.html" class="active">About</a>
+    </nav>
+</header>
+
+<section class="about-section">
+    <h1>About Us</h1>
+    <p>
+        Master's Pastil is a family-owned restaurant dedicated to serving
+        authentic and delicious Filipino pastil made from fresh ingredients.
+        We bring comfort and tradition together in every meal.
+    </p>
+
+    <!-- OWNER CARD -->
+    <div class="owner-card">
+        <img src="owner.png" alt="Owner Photo">
+        <h3>Ofelia Escobar</h3>
+        <p>Owner of Master's Pastil</p>
+        <p>Contact Number: 0991-504-6505</p>
+
+        <!-- SOCIAL BUTTON -->
+        <div class="social-buttons">
+            <a href="https://www.facebook.com/profile.php?id=61566639155132" class="facebook" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- BRANCH MAPS -->
+    <div class="branch-section">
+        <div class="branch">
+            <h3>MASTER'S PASTIL CAA BRANCH</h3>
+            <iframe 
+                src="https://www.google.com/maps?q=FX5V+JRX+Las+Piñas,+Metro+Manila&output=embed"
+                allowfullscreen
+                loading="lazy">
+            </iframe>
+        </div>
+
+        <div class="branch">
+            <h3>MASTER'S PASTIL SUKI MART MOONWALK BRANCH</h3>
+            <iframe 
+                src="https://www.google.com/maps?q=404+Alabang-Zapote+Rd,+Talon+Uno,+Las+Piñas,+1747+Metro+Manila&output=embed"
+                allowfullscreen
+                loading="lazy">
+            </iframe>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Master's Pastil | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

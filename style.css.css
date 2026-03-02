@@ -1,0 +1,31 @@
+/* HEADER */
+header {
+    background: transparent;   /* remove black */
+    color: white;
+    padding: 20px 50px;
+    position: fixed;           /* steady on top */
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* Center nav properly */
+nav {
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 14px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    border: 2px solid #ff9800;
+}
